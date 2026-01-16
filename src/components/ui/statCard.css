@@ -1,0 +1,47 @@
+.stat-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  min-width: 220px;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* THIN ACCENT LINE */
+.stat-accent {
+  height: 4px;
+  width: 100%;
+}
+
+/* CARD CONTENT */
+.stat-body {
+  padding: 18px 20px;
+}
+
+.stat-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #6b7280;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* ACCENT COLORS (SUBTLE) */
+.accent-blue .stat-accent {
+  background-color: #1f3a8a;
+}
+
+.accent-orange .stat-accent {
+  background-color: #b45309;
+}
+
+.accent-green .stat-accent {
+  background-color: #166534;
+}

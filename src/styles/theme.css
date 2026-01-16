@@ -1,0 +1,17 @@
+:root {
+  --primary: #041d62;          /* Navy Blue */
+  --primary-light: #0b2c85;
+  --background: #f4f6f9;
+  --sidebar-bg: #041d62;
+  --card-bg: #ffffff;
+  --text-dark: #1f2937;
+  --text-light: #e5e7eb;
+  --border: #e5e7eb;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background-color: var(--background);
+  color: var(--text-dark);
+}
