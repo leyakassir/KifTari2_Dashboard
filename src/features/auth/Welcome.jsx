@@ -1,25 +1,8 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
+import maintenanceAnimation from "../../assets/maintenance.json";
 
 export default function Welcome() {
-  const [animationData, setAnimationData] = useState(null);
-
-  useEffect(() => {
-    let isMounted = true;
-    fetch(
-      "https://lottie.host/647eb023-6040-4b60-a275-e2546994dd7f/zDCfp5lhLe.json"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        if (isMounted) setAnimationData(data);
-      })
-      .catch(() => {});
-    return () => {
-      isMounted = false;
-    };
-  }, []);
-
   return (
     <div
       className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100"
@@ -81,7 +64,7 @@ export default function Welcome() {
                 <img
                   src="/logo.png"
                   alt="KifTari2 logo"
-                  className="h-12 w-12 rounded-xl bg-white/90 p-2"
+                  className="h-16 w-16 rounded-2xl bg-white p-2 shadow-lg"
                 />
                 <div>
                   <p className="text-sm font-semibold text-slate-100">
@@ -98,17 +81,11 @@ export default function Welcome() {
             </div>
 
             <div className="mt-6 rounded-2xl bg-slate-950/70 p-4">
-              {animationData ? (
-                <Lottie
-                  animationData={animationData}
-                  loop
-                  className="h-64 w-full"
-                />
-              ) : (
-                <div className="flex h-64 items-center justify-center text-sm text-slate-500">
-                  Loading animation...
-                </div>
-              )}
+              <Lottie
+                animationData={maintenanceAnimation}
+                loop
+                className="h-64 w-full"
+              />
             </div>
           </div>
         </div>
