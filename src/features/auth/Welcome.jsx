@@ -29,20 +29,20 @@ export default function Welcome() {
 
             <div className="space-y-3">
               <p
-                className="text-xs uppercase tracking-[0.35em] text-emerald-200/80"
-                style={{ fontFamily: "'Manrope', sans-serif" }}
+                className="text-xs uppercase tracking-[0.28em] text-emerald-200/80"
+                style={{ fontFamily: "'Source Sans 3', sans-serif" }}
               >
                 KifTari2 Governance
               </p>
               <h1
                 className="text-3xl font-semibold text-slate-50 sm:text-4xl md:text-5xl"
-                style={{ fontFamily: "'DM Serif Display', serif" }}
+                style={{ fontFamily: "'Source Sans 3', sans-serif", letterSpacing: "-0.01em" }}
               >
                 Practical road safety oversight for municipalities
               </h1>
               <p
                 className="text-base text-slate-300 sm:text-lg"
-                style={{ fontFamily: "'Manrope', sans-serif" }}
+                style={{ fontFamily: "'Source Sans 3', sans-serif", letterSpacing: "0.01em" }}
               >
                 Review reports, manage field operators, and track street
                 conditions. Access your dashboard below.
@@ -53,7 +53,7 @@ export default function Welcome() {
               <Link
                 to="/login"
                 className="group inline-flex items-center justify-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:bg-emerald-300"
-                style={{ fontFamily: "'Manrope', sans-serif" }}
+                style={{ fontFamily: "'Source Sans 3', sans-serif", letterSpacing: "0.02em" }}
               >
                 Go to login
                 <span className="ml-2 text-base transition-transform duration-300 group-hover:translate-x-1">
