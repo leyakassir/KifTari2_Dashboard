@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 
 import Login from "../features/auth/Login";
+import Welcome from "../features/auth/Welcome";
 
 // Layout
 import EmployerLayout from "../features/employer/EmployerLayout";
@@ -28,6 +29,7 @@ export default function AppRoutes() {
   return (
     <Routes>
       {/* PUBLIC */}
+      <Route path="/" element={<Welcome />} />
       <Route path="/login" element={<Login />} />
 
       {/* EMPLOYER (PROTECTED) */}
