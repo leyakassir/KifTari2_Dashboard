@@ -32,20 +32,21 @@ export default function Welcome() {
                 className="text-xs uppercase tracking-[0.28em] text-emerald-200/80"
                 style={{ fontFamily: "'Source Sans 3', sans-serif" }}
               >
-                KifTari2 Governance
+                KIFTARI2 GOVERNANCE
               </p>
               <h1
                 className="text-3xl font-semibold text-slate-50 sm:text-4xl md:text-5xl"
                 style={{ fontFamily: "'Source Sans 3', sans-serif", letterSpacing: "-0.01em" }}
               >
-                Practical road safety oversight for municipalities
+                Road safety management for municipalities
               </h1>
               <p
                 className="text-base text-slate-300 sm:text-lg"
                 style={{ fontFamily: "'Source Sans 3', sans-serif", letterSpacing: "0.01em" }}
               >
-                Review reports, manage field operators, and track street
-                conditions. Access your dashboard below.
+                View reported road issues, manage field operators, and track
+                the status of every street issue through a single, centralized
+                dashboard.
               </p>
             </div>
 
@@ -55,13 +56,13 @@ export default function Welcome() {
                 className="group inline-flex items-center justify-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:bg-emerald-300"
                 style={{ fontFamily: "'Source Sans 3', sans-serif", letterSpacing: "0.02em" }}
               >
-                Go to login
+                Continue to login
                 <span className="ml-2 text-base transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
               </Link>
               <div className="rounded-full border border-slate-700/70 px-6 py-3 text-xs uppercase tracking-[0.3em] text-slate-400">
-                Used by municipal teams
+                Designed for municipal teams and local authorities
               </div>
             </div>
           </div>
@@ -70,9 +71,9 @@ export default function Welcome() {
         <div className="mt-10 flex flex-col items-center gap-3 text-xs text-slate-500">
           <div className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            Operational view for municipal staff
+            Real-time visibility into municipal road operations
           </div>
-          <span>Secure access begins at login</span>
+          <span>Secure access for authorized users only</span>
         </div>
       </div>
     </div>
