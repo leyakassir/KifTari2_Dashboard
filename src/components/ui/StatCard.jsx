@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { FileText } from "lucide-react";
 
 const accentMap = {
-  blue: "border-blue-600 text-blue-600",
-  orange: "border-orange-500 text-orange-500",
-  green: "border-green-600 text-green-600",
+  blue: "border-emerald-400/50 text-emerald-200",
+  orange: "border-emerald-400/50 text-emerald-200",
+  green: "border-emerald-400/50 text-emerald-200",
 };
 
 export default function StatCard({ title, value, accent = "blue" }) {
@@ -12,14 +12,14 @@ export default function StatCard({ title, value, accent = "blue" }) {
     <motion.div
       whileHover={{ y: -2 }}
       transition={{ duration: 0.15 }}
-      className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6"
+      className="bg-slate-900/50 rounded-2xl shadow-sm border border-slate-800/60 p-6"
     >
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-sm font-medium text-slate-500">
+          <p className="text-sm font-medium text-slate-400">
             {title}
           </p>
-          <p className="mt-2 text-3xl font-bold text-slate-900">
+          <p className="mt-2 text-3xl font-bold text-slate-100">
             {value}
           </p>
         </div>

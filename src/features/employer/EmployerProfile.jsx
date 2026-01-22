@@ -69,7 +69,7 @@ export default function EmployerProfile() {
 
   if (loading) {
     return (
-      <div className="bg-white border border-slate-200 rounded-xl p-8 flex justify-center">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-8 flex justify-center">
         <Loader2 className="animate-spin text-slate-400" />
       </div>
     );
@@ -77,10 +77,10 @@ export default function EmployerProfile() {
 
   return (
     <div className="space-y-6">
-      <div className="bg-white border border-slate-200 rounded-2xl p-6">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-2xl p-6">
         <div className="flex items-center gap-3 mb-2">
-          <User className="text-primary" size={20} />
-          <h2 className="text-lg font-semibold text-slate-900">
+          <User className="text-emerald-300" size={20} />
+          <h2 className="text-lg font-semibold text-slate-100">
             Employer Profile
           </h2>
         </div>
@@ -89,31 +89,31 @@ export default function EmployerProfile() {
           <div className="text-sm text-red-600">{errorMessage}</div>
         ) : (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-700 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-300 mt-4">
               <div>
-                <div className="text-xs text-slate-500">Role</div>
-                <div className="font-medium text-slate-900">
+                <div className="text-xs text-slate-400">Role</div>
+                <div className="font-medium text-slate-100">
                   {user?.role || "N/A"}
                 </div>
               </div>
               <div>
-                <div className="text-xs text-slate-500">Email Verified</div>
-                <div className="font-medium text-slate-900">
+                <div className="text-xs text-slate-400">Email Verified</div>
+                <div className="font-medium text-slate-100">
                   {user?.emailVerified ? "Yes" : "No"}
                 </div>
               </div>
               <div>
-                <div className="text-xs text-slate-500">Member Since</div>
-                <div className="font-medium text-slate-900">
+                <div className="text-xs text-slate-400">Member Since</div>
+                <div className="font-medium text-slate-100">
                   {formatDate(user?.createdAt)}
                 </div>
               </div>
             </div>
 
-            <div className="mt-6 border-t border-slate-200 pt-6">
+            <div className="mt-6 border-t border-slate-800/60 pt-6">
               <button
                 onClick={() => setShowProfileForm((prev) => !prev)}
-                className="px-4 py-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 text-sm"
+                className="px-4 py-2 rounded-lg border border-slate-800/60 text-slate-300 hover:bg-slate-900/60 text-sm"
               >
                 {showProfileForm ? "Hide Update Profile" : "Update Profile"}
               </button>
@@ -183,11 +183,11 @@ export default function EmployerProfile() {
                   <div className="md:col-span-2">
                     <button
                       disabled={saving}
-                      className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primarySoft disabled:opacity-50"
+                      className="bg-emerald-400 text-white px-6 py-2 rounded-lg hover:bg-emerald-300 disabled:opacity-50"
                     >
                       {saving ? "Saving..." : "Save Changes"}
                     </button>
-                    <div className="text-xs text-slate-500 mt-2">
+                    <div className="text-xs text-slate-400 mt-2">
                       Changing email will require verification.
                     </div>
                   </div>
@@ -195,24 +195,24 @@ export default function EmployerProfile() {
               ) : null}
             </div>
 
-            <div className="mt-6 border-t border-slate-200 pt-6">
+            <div className="mt-6 border-t border-slate-800/60 pt-6">
               <div className="flex items-center gap-2 mb-4">
-                <MailCheck size={18} className="text-primary" />
-                <div className="font-semibold text-slate-900">
+                <MailCheck size={18} className="text-emerald-300" />
+                <div className="font-semibold text-slate-100">
                   Email Verification
                 </div>
               </div>
 
-              <div className="text-sm text-slate-600 mb-4">
+              <div className="text-sm text-slate-400 mb-4">
                 Status:{" "}
-                <span className="font-medium text-slate-900">
+                <span className="font-medium text-slate-100">
                   {user?.emailVerified ? "Verified" : "Not Verified"}
                 </span>
               </div>
 
               <button
                 onClick={() => setShowVerifyForm((prev) => !prev)}
-                className="px-4 py-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 text-sm"
+                className="px-4 py-2 rounded-lg border border-slate-800/60 text-slate-300 hover:bg-slate-900/60 text-sm"
               >
                 {showVerifyForm ? "Hide Verification" : "Verify Email"}
               </button>
@@ -238,7 +238,7 @@ export default function EmployerProfile() {
                         window.open(url, "_blank", "noopener");
                         setTimeout(() => setVerifying(false), 500);
                       }}
-                      className="px-4 py-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50"
+                      className="px-4 py-2 rounded-lg border border-slate-800/60 text-slate-300 hover:bg-slate-900/60"
                       disabled={verifying}
                     >
                       {verifying ? "Opening..." : "Open Verify Link"}
@@ -259,7 +259,7 @@ export default function EmployerProfile() {
                           setResending(false);
                         }
                       }}
-                      className="px-4 py-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 flex items-center gap-2"
+                      className="px-4 py-2 rounded-lg border border-slate-800/60 text-slate-300 hover:bg-slate-900/60 flex items-center gap-2"
                       disabled={resending}
                     >
                       <Send size={14} />
@@ -270,10 +270,10 @@ export default function EmployerProfile() {
               ) : null}
             </div>
 
-            <div className="mt-6 border-t border-slate-200 pt-6">
+            <div className="mt-6 border-t border-slate-800/60 pt-6">
               <button
                 onClick={() => setShowPasswordForm((prev) => !prev)}
-                className="px-4 py-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 text-sm"
+                className="px-4 py-2 rounded-lg border border-slate-800/60 text-slate-300 hover:bg-slate-900/60 text-sm"
               >
                 {showPasswordForm ? "Hide Password Form" : "Change Password"}
               </button>
@@ -359,7 +359,7 @@ export default function EmployerProfile() {
                   <div className="md:col-span-2">
                     <button
                       disabled={passwordSaving}
-                      className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primarySoft disabled:opacity-50"
+                      className="bg-emerald-400 text-white px-6 py-2 rounded-lg hover:bg-emerald-300 disabled:opacity-50"
                     >
                       {passwordSaving ? "Updating..." : "Update Password"}
                     </button>

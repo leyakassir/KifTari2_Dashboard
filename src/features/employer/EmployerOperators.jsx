@@ -163,7 +163,7 @@ export default function EmployerOperators() {
   /* ================= LOADING ================= */
   if (loading) {
     return (
-      <div className="bg-white border border-slate-200 rounded-xl p-8 flex justify-center">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-8 flex justify-center">
         <Loader2 className="animate-spin text-slate-400" />
       </div>
     );
@@ -172,7 +172,7 @@ export default function EmployerOperators() {
   return (
     <div className="space-y-8">
       {/* ================= CREATE FORM ================= */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-6">
         <div className="flex items-center gap-2 mb-4">
           <Plus size={18} />
           <h3 className="font-semibold text-lg">Create Field Operator</h3>
@@ -212,7 +212,7 @@ export default function EmployerOperators() {
           <div className="md:col-span-2">
             <button
               disabled={creating}
-              className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primarySoft disabled:opacity-50"
+              className="bg-emerald-400 text-white px-6 py-2 rounded-lg hover:bg-emerald-300 disabled:opacity-50"
             >
               {creating ? "Creating..." : "Create Operator"}
             </button>
@@ -221,7 +221,7 @@ export default function EmployerOperators() {
       </div>
 
       {/* ================= OPERATORS LIST ================= */}
-      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl overflow-hidden">
         <div className="flex items-center gap-2 px-6 py-4 border-b">
           <User size={18} />
           <h3 className="font-semibold">Operators List</h3>
@@ -234,8 +234,8 @@ export default function EmployerOperators() {
         ) : null}
 
         <table className="w-full text-sm">
-          <thead className="bg-slate-50 border-b">
-            <tr className="text-left text-slate-600">
+          <thead className="bg-slate-900/60 border-b">
+            <tr className="text-left text-slate-400">
               <th className="px-6 py-3">Name</th>
               <th className="px-6 py-3">Email</th>
               <th className="px-6 py-3">Assigned Reports</th>
@@ -253,14 +253,14 @@ export default function EmployerOperators() {
               const rowKey = opId || op?.email || `operator-${index}`;
 
               return (
-                <tr key={rowKey} className="hover:bg-slate-50">
+                <tr key={rowKey} className="hover:bg-slate-900/60">
                   <td className="px-6 py-4 font-medium">
                     {(op?.firstName || "N/A") + " " + (op?.lastName || "")}
                   </td>
-                  <td className="px-6 py-4 text-slate-600">
+                  <td className="px-6 py-4 text-slate-400">
                     {op?.email || "N/A"}
                   </td>
-                  <td className="px-6 py-4 text-slate-600">
+                  <td className="px-6 py-4 text-slate-400">
                     {assignedCount}
                   </td>
                   <td className="px-6 py-4">
@@ -281,7 +281,7 @@ export default function EmployerOperators() {
                         </button>
                         {/* Clarify why delete is disabled when reports are assigned */}
                         {assignedCount > 0 ? (
-                          <span className="mt-1 text-xs text-slate-500">
+                          <span className="mt-1 text-xs text-slate-400">
                             You cant delete an operator with assigned reports.
                           </span>
                         ) : null}

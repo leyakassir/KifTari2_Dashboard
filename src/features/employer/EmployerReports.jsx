@@ -152,7 +152,7 @@ export default function EmployerReports() {
 
   if (loading) {
     return (
-      <div className="bg-white border border-slate-200 rounded-xl h-40 animate-pulse" />
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl h-40 animate-pulse" />
     );
   }
 
@@ -160,16 +160,16 @@ export default function EmployerReports() {
     <div className="space-y-6">
       {/* ================= HEADER ================= */}
       <div>
-        <h2 className="text-2xl font-semibold text-slate-900">
+        <h2 className="text-2xl font-semibold text-slate-100">
           Reports Management
         </h2>
-        <p className="text-sm text-slate-500">
+        <p className="text-sm text-slate-400">
           Reports in your municipality
         </p>
       </div>
 
       {/* ================= FILTER BAR ================= */}
-      <div className="bg-white border border-slate-200 rounded-xl p-4 flex flex-wrap gap-3 items-center">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4 flex flex-wrap gap-3 items-center">
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -220,21 +220,21 @@ export default function EmployerReports() {
       </div>
 
       {/* ================= TABLE (RESPONSIVE ONLY) ================= */}
-      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl overflow-hidden">
         <div className="flex items-center gap-2 px-6 py-4 border-b">
           <FileText size={18} />
           <h3 className="font-semibold">Incoming Reports</h3>
         </div>
 
         {filteredReports.length === 0 ? (
-          <div className="p-8 text-center text-slate-500">
+          <div className="p-8 text-center text-slate-400">
             No reports found.
           </div>
         ) : (
           <div className="w-full overflow-x-auto">
             <table className="min-w-[900px] w-full text-sm">
-              <thead className="bg-slate-50 border-b">
-                <tr className="text-left text-slate-600">
+              <thead className="bg-slate-900/60 border-b">
+                <tr className="text-left text-slate-400">
                   <th className="px-6 py-3">Title</th>
                   <th className="px-6 py-3">Status</th>
                   <th className="px-6 py-3">Operator</th>
@@ -245,18 +245,18 @@ export default function EmployerReports() {
 
               <tbody className="divide-y">
                 {filteredReports.map((r) => (
-                  <tr key={r._id} className="hover:bg-slate-50">
+                  <tr key={r._id} className="hover:bg-slate-900/60">
                     <td className="px-6 py-4 font-medium">{r.title}</td>
 
                     <td className="px-6 py-4">
                       <StatusBadge status={r.status} />
                     </td>
 
-                    <td className="px-6 py-4 text-slate-700">
+                    <td className="px-6 py-4 text-slate-300">
                       {operatorName(r.assignedOperatorId)}
                     </td>
 
-                    <td className="px-6 py-4 text-slate-600">
+                    <td className="px-6 py-4 text-slate-400">
                       {new Date(r.createdAt).toLocaleDateString()}
                     </td>
 
@@ -266,7 +266,7 @@ export default function EmployerReports() {
                           onClick={() =>
                             navigate(`/employer/reports/${r._id}`)
                           }
-                          className="px-3 py-2 border rounded-lg hover:bg-slate-100"
+                          className="px-3 py-2 border rounded-lg hover:bg-slate-900/40"
                         >
                           <Eye size={16} />
                         </button>
@@ -274,7 +274,7 @@ export default function EmployerReports() {
                         {r.status === "pending" && (
                           <button
                             onClick={() => setSelectedReport(r)}
-                            className="px-3 py-2 bg-primary text-white rounded-lg flex items-center gap-1"
+                            className="px-3 py-2 bg-emerald-400 text-white rounded-lg flex items-center gap-1"
                           >
                             <UserPlus size={14} />
                             Assign

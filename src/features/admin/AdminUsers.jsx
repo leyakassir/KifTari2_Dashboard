@@ -170,7 +170,7 @@ export default function AdminUsers() {
 
   if (loading) {
     return (
-      <div className="bg-white border border-slate-200 rounded-xl p-8 flex justify-center">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-8 flex justify-center">
         <Loader2 className="animate-spin text-slate-400" />
       </div>
     );
@@ -179,30 +179,30 @@ export default function AdminUsers() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-white border border-slate-200 rounded-xl p-4">
-          <div className="text-xs text-slate-500">Total Users</div>
-          <div className="text-2xl font-semibold text-slate-900">
+        <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4">
+          <div className="text-xs text-slate-400">Total Users</div>
+          <div className="text-2xl font-semibold text-slate-100">
             {counts.total}
           </div>
         </div>
-        <div className="bg-white border border-slate-200 rounded-xl p-4">
-          <div className="text-xs text-slate-500">Active</div>
-          <div className="text-2xl font-semibold text-slate-900">
+        <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4">
+          <div className="text-xs text-slate-400">Active</div>
+          <div className="text-2xl font-semibold text-slate-100">
             {counts.active}
           </div>
         </div>
-        <div className="bg-white border border-slate-200 rounded-xl p-4">
-          <div className="text-xs text-slate-500">Deactivated</div>
-          <div className="text-2xl font-semibold text-slate-900">
+        <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4">
+          <div className="text-xs text-slate-400">Deactivated</div>
+          <div className="text-2xl font-semibold text-slate-100">
             {counts.inactive}
           </div>
         </div>
       </div>
 
-      <div className="bg-white border border-slate-200 rounded-xl p-4">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4">
         <div className="flex flex-wrap items-center gap-3">
           <input
-            className="border border-slate-200 rounded-lg px-3 py-2 text-sm"
+            className="border border-slate-800/60 rounded-lg px-3 py-2 text-sm"
             placeholder="Search by name or email"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -210,7 +210,7 @@ export default function AdminUsers() {
           <select
             value={roleFilter}
             onChange={(e) => setRoleFilter(e.target.value)}
-            className="border border-slate-200 rounded-lg px-3 py-2 text-sm"
+            className="border border-slate-800/60 rounded-lg px-3 py-2 text-sm"
           >
             {ROLE_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -220,7 +220,7 @@ export default function AdminUsers() {
           </select>
           <button
             onClick={fetchUsers}
-            className="flex items-center gap-2 text-sm px-3 py-2 border border-slate-200 rounded-lg hover:bg-slate-50"
+            className="flex items-center gap-2 text-sm px-3 py-2 border border-slate-800/60 rounded-lg hover:bg-slate-900/60"
           >
             <RefreshCcw size={14} />
             Refresh
@@ -235,7 +235,7 @@ export default function AdminUsers() {
           <button
             onClick={() => handleBulkUpdate(true)}
             disabled={!selectedIds.size || updatingId === "bulk"}
-            className="text-sm px-3 py-2 border border-emerald-200 text-emerald-700 rounded-lg hover:bg-emerald-50 disabled:opacity-50"
+            className="text-sm px-3 py-2 border border-emerald-400/40 text-emerald-200 rounded-lg hover:bg-emerald-400/20 disabled:opacity-50"
           >
             Reactivate Selected
           </button>
@@ -245,11 +245,11 @@ export default function AdminUsers() {
         </div>
       </div>
 
-      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="bg-slate-50 border-b">
-              <tr className="text-left text-slate-600">
+            <thead className="bg-slate-900/60 border-b">
+              <tr className="text-left text-slate-400">
                 <th className="px-4 py-3">
                   <input
                     type="checkbox"
@@ -283,7 +283,7 @@ export default function AdminUsers() {
                   user.isActive !== false && user.active !== false;
                 return (
                   <Fragment key={user._id}>
-                    <tr className="hover:bg-slate-50">
+                    <tr className="hover:bg-slate-900/60">
                       <td className="px-4 py-4">
                         <input
                           type="checkbox"
@@ -302,19 +302,19 @@ export default function AdminUsers() {
                         />
                       </td>
                       <td className="px-6 py-4">
-                        <div className="font-medium text-slate-900">
+                        <div className="font-medium text-slate-100">
                           {(user.firstName || "N/A") +
                             " " +
                             (user.lastName || "")}
                         </div>
-                        <div className="text-xs text-slate-500">
+                        <div className="text-xs text-slate-400">
                           {user.email || "N/A"}
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-slate-600">
+                      <td className="px-6 py-4 text-slate-400">
                         {user.role || "N/A"}
                       </td>
-                      <td className="px-6 py-4 text-slate-600">
+                      <td className="px-6 py-4 text-slate-400">
                         {user.municipality?.name || "N/A"}
                       </td>
                       <td className="px-6 py-4">
@@ -322,17 +322,17 @@ export default function AdminUsers() {
                           className={[
                             "inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium",
                             statusActive
-                              ? "bg-emerald-50 text-emerald-700"
+                              ? "bg-emerald-400/20 text-emerald-100"
                               : "bg-rose-50 text-rose-700",
                           ].join(" ")}
                         >
                           {statusActive ? "Active" : "Deactivated"}
                         </span>
                       </td>
-                      <td className="px-6 py-4 text-slate-600">
+                      <td className="px-6 py-4 text-slate-400">
                         {formatDate(user.createdAt)}
                       </td>
-                      <td className="px-6 py-4 text-slate-600">
+                      <td className="px-6 py-4 text-slate-400">
                         {formatDate(user.lastLoginAt)}
                       </td>
                       <td className="px-6 py-4">
@@ -344,7 +344,7 @@ export default function AdminUsers() {
                               "px-3 py-2 rounded-lg border text-sm flex items-center gap-1",
                               statusActive
                                 ? "border-rose-200 text-rose-700 hover:bg-rose-50"
-                                : "border-emerald-200 text-emerald-700 hover:bg-emerald-50",
+                                : "border-emerald-400/40 text-emerald-200 hover:bg-emerald-400/20",
                               updatingId === user._id ? "opacity-60" : "",
                             ].join(" ")}
                             title={
@@ -366,7 +366,7 @@ export default function AdminUsers() {
                           </button>
                           <button
                             onClick={() => handleStartEdit(user)}
-                            className="px-3 py-2 rounded-lg border border-slate-200 text-sm hover:bg-slate-50 flex items-center gap-1"
+                            className="px-3 py-2 rounded-lg border border-slate-800/60 text-sm hover:bg-slate-900/60 flex items-center gap-1"
                           >
                             <Edit2 size={14} />
                             Edit
@@ -375,7 +375,7 @@ export default function AdminUsers() {
                       </td>
                     </tr>
                     {editUserId === user._id ? (
-                      <tr className="bg-slate-50">
+                      <tr className="bg-slate-900/60">
                         <td colSpan={8} className="px-6 py-4">
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <select
@@ -410,7 +410,7 @@ export default function AdminUsers() {
                               <button
                                 onClick={handleSaveEdit}
                                 disabled={updatingId === user._id}
-                                className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primarySoft disabled:opacity-50"
+                                className="bg-emerald-400 text-white px-4 py-2 rounded-lg hover:bg-emerald-300 disabled:opacity-50"
                               >
                                 {updatingId === user._id
                                   ? "Saving..."
@@ -418,7 +418,7 @@ export default function AdminUsers() {
                               </button>
                               <button
                                 onClick={() => setEditUserId(null)}
-                                className="px-4 py-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-100"
+                                className="px-4 py-2 rounded-lg border border-slate-800/60 text-slate-300 hover:bg-slate-900/40"
                               >
                                 Cancel
                               </button>

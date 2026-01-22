@@ -147,7 +147,7 @@ export default function AdminMunicipalities() {
 
   if (loading) {
     return (
-      <div className="bg-white border border-slate-200 rounded-xl p-8 flex justify-center">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-8 flex justify-center">
         <Loader2 className="animate-spin text-slate-400" />
       </div>
     );
@@ -155,10 +155,10 @@ export default function AdminMunicipalities() {
 
   return (
     <div className="space-y-6">
-      <div className="bg-white border border-slate-200 rounded-xl p-6">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-6">
         <div className="flex items-center gap-2 mb-4">
-          <MapPin size={18} className="text-primary" />
-          <div className="font-semibold text-slate-900">
+          <MapPin size={18} className="text-emerald-300" />
+          <div className="font-semibold text-slate-100">
             Create Municipality
           </div>
         </div>
@@ -201,7 +201,7 @@ export default function AdminMunicipalities() {
           <div className="md:col-span-2 lg:col-span-4">
             <button
               disabled={creating}
-              className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primarySoft disabled:opacity-50"
+              className="bg-emerald-400 text-white px-6 py-2 rounded-lg hover:bg-emerald-300 disabled:opacity-50"
             >
               {creating ? "Creating..." : "Create Municipality"}
             </button>
@@ -210,14 +210,14 @@ export default function AdminMunicipalities() {
       </div>
 
       {selected ? (
-        <div className="bg-white border border-slate-200 rounded-xl p-6">
+        <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-6">
           <div className="flex items-center justify-between gap-3 flex-wrap">
-            <div className="font-semibold text-slate-900">
+            <div className="font-semibold text-slate-100">
               Update Coordinates: {selected.name}
             </div>
             <button
               onClick={() => setSelected(null)}
-              className="text-sm text-slate-500 hover:text-slate-700"
+              className="text-sm text-slate-400 hover:text-slate-300"
             >
               Cancel
             </button>
@@ -262,7 +262,7 @@ export default function AdminMunicipalities() {
             <div className="md:col-span-2 lg:col-span-4">
               <button
                 disabled={updatingId === selected.id}
-                className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primarySoft disabled:opacity-50"
+                className="bg-emerald-400 text-white px-6 py-2 rounded-lg hover:bg-emerald-300 disabled:opacity-50"
               >
                 {updatingId === selected.id ? "Updating..." : "Update Coordinates"}
               </button>
@@ -271,7 +271,7 @@ export default function AdminMunicipalities() {
         </div>
       ) : null}
 
-      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl overflow-hidden">
         {errorMessage ? (
           <div className="px-6 py-4 text-sm text-red-600">
             {errorMessage}
@@ -280,8 +280,8 @@ export default function AdminMunicipalities() {
 
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="bg-slate-50 border-b">
-              <tr className="text-left text-slate-600">
+            <thead className="bg-slate-900/60 border-b">
+              <tr className="text-left text-slate-400">
                 <th className="px-6 py-3">Municipality</th>
                 <th className="px-6 py-3">Assigned Employer</th>
                 <th className="px-6 py-3">Status</th>
@@ -293,11 +293,11 @@ export default function AdminMunicipalities() {
             </thead>
             <tbody className="divide-y">
               {rows.map((row) => (
-                <tr key={row.id} className="hover:bg-slate-50">
-                  <td className="px-6 py-4 font-medium text-slate-900">
+                <tr key={row.id} className="hover:bg-slate-900/60">
+                  <td className="px-6 py-4 font-medium text-slate-100">
                     {row.name}
                   </td>
-                  <td className="px-6 py-4 text-slate-600">
+                  <td className="px-6 py-4 text-slate-400">
                     {row.employer || "Unassigned"}
                   </td>
                   <td className="px-6 py-4">
@@ -305,27 +305,27 @@ export default function AdminMunicipalities() {
                       className={[
                         "inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium",
                         row.isActive
-                          ? "bg-emerald-50 text-emerald-700"
+                          ? "bg-emerald-400/20 text-emerald-100"
                           : "bg-rose-50 text-rose-700",
                       ].join(" ")}
                     >
                       {row.isActive ? "Active" : "Deactivated"}
                     </span>
                   </td>
-                  <td className="px-6 py-4 text-slate-600">
+                  <td className="px-6 py-4 text-slate-400">
                     {row.totalReports}
                   </td>
-                  <td className="px-6 py-4 text-slate-600">
+                  <td className="px-6 py-4 text-slate-400">
                     {row.unresolved}
                   </td>
-                  <td className="px-6 py-4 text-slate-600">
+                  <td className="px-6 py-4 text-slate-400">
                     {row.resolved}
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex flex-wrap justify-end gap-2">
                       <button
                         onClick={() => handleSelect(row)}
-                        className="px-3 py-2 border border-slate-200 rounded-lg text-sm hover:bg-slate-50"
+                        className="px-3 py-2 border border-slate-800/60 rounded-lg text-sm hover:bg-slate-900/60"
                       >
                         Edit Coordinates
                       </button>
@@ -336,7 +336,7 @@ export default function AdminMunicipalities() {
                           "px-3 py-2 rounded-lg border text-sm",
                           row.isActive
                             ? "border-rose-200 text-rose-700 hover:bg-rose-50"
-                            : "border-emerald-200 text-emerald-700 hover:bg-emerald-50",
+                            : "border-emerald-400/40 text-emerald-200 hover:bg-emerald-400/20",
                           updatingId === row.id ? "opacity-60" : "",
                         ].join(" ")}
                       >

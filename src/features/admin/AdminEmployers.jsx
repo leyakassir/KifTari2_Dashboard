@@ -131,7 +131,7 @@ export default function AdminEmployers() {
 
   if (loading) {
     return (
-      <div className="bg-white border border-slate-200 rounded-xl p-8 flex justify-center">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-8 flex justify-center">
         <Loader2 className="animate-spin text-slate-400" />
       </div>
     );
@@ -139,8 +139,8 @@ export default function AdminEmployers() {
 
   return (
     <div className="space-y-6">
-      <div className="bg-white border border-slate-200 rounded-xl p-6">
-        <div className="font-semibold text-slate-900 mb-4">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-6">
+        <div className="font-semibold text-slate-100 mb-4">
           Create Employer
         </div>
         <form
@@ -201,7 +201,7 @@ export default function AdminEmployers() {
           <div className="md:col-span-2">
             <button
               disabled={creating}
-              className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primarySoft disabled:opacity-50"
+              className="bg-emerald-400 text-white px-6 py-2 rounded-lg hover:bg-emerald-300 disabled:opacity-50"
             >
               {creating ? "Creating..." : "Create Employer"}
             </button>
@@ -210,27 +210,27 @@ export default function AdminEmployers() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-white border border-slate-200 rounded-xl p-4">
-          <div className="text-xs text-slate-500">Total Employers</div>
-          <div className="text-2xl font-semibold text-slate-900">
+        <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4">
+          <div className="text-xs text-slate-400">Total Employers</div>
+          <div className="text-2xl font-semibold text-slate-100">
             {counts.total}
           </div>
         </div>
-        <div className="bg-white border border-slate-200 rounded-xl p-4">
-          <div className="text-xs text-slate-500">Active</div>
-          <div className="text-2xl font-semibold text-slate-900">
+        <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4">
+          <div className="text-xs text-slate-400">Active</div>
+          <div className="text-2xl font-semibold text-slate-100">
             {counts.active}
           </div>
         </div>
-        <div className="bg-white border border-slate-200 rounded-xl p-4">
-          <div className="text-xs text-slate-500">Deactivated</div>
-          <div className="text-2xl font-semibold text-slate-900">
+        <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4">
+          <div className="text-xs text-slate-400">Deactivated</div>
+          <div className="text-2xl font-semibold text-slate-100">
             {counts.inactive}
           </div>
         </div>
       </div>
 
-      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl overflow-hidden">
         {errorMessage ? (
           <div className="px-6 py-4 text-sm text-red-600">
             {errorMessage}
@@ -239,8 +239,8 @@ export default function AdminEmployers() {
 
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="bg-slate-50 border-b">
-              <tr className="text-left text-slate-600">
+            <thead className="bg-slate-900/60 border-b">
+              <tr className="text-left text-slate-400">
                 <th className="px-6 py-3">Employer</th>
                 <th className="px-6 py-3">Municipality</th>
                 <th className="px-6 py-3">Status</th>
@@ -253,18 +253,18 @@ export default function AdminEmployers() {
               {employers.map((employer) => {
                 const statusActive = employer.isActive !== false;
                 return (
-                  <tr key={employer._id} className="hover:bg-slate-50">
+                  <tr key={employer._id} className="hover:bg-slate-900/60">
                     <td className="px-6 py-4">
-                      <div className="font-medium text-slate-900">
+                      <div className="font-medium text-slate-100">
                         {(employer.firstName || "N/A") +
                           " " +
                           (employer.lastName || "")}
                       </div>
-                      <div className="text-xs text-slate-500">
+                      <div className="text-xs text-slate-400">
                         {employer.email || "N/A"}
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-slate-600">
+                    <td className="px-6 py-4 text-slate-400">
                       {employer.municipality?.name || "N/A"}
                     </td>
                     <td className="px-6 py-4">
@@ -272,17 +272,17 @@ export default function AdminEmployers() {
                         className={[
                           "inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium",
                           statusActive
-                            ? "bg-emerald-50 text-emerald-700"
+                            ? "bg-emerald-400/20 text-emerald-100"
                             : "bg-rose-50 text-rose-700",
                         ].join(" ")}
                       >
                         {statusActive ? "Active" : "Deactivated"}
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-slate-600">
+                    <td className="px-6 py-4 text-slate-400">
                       {formatDate(employer.createdAt)}
                     </td>
-                    <td className="px-6 py-4 text-slate-600">
+                    <td className="px-6 py-4 text-slate-400">
                       {formatDate(employer.lastLoginAt)}
                     </td>
                     <td className="px-6 py-4">
@@ -294,7 +294,7 @@ export default function AdminEmployers() {
                             "px-3 py-2 rounded-lg border text-sm flex items-center gap-1",
                             statusActive
                               ? "border-rose-200 text-rose-700 hover:bg-rose-50"
-                              : "border-emerald-200 text-emerald-700 hover:bg-emerald-50",
+                              : "border-emerald-400/40 text-emerald-200 hover:bg-emerald-400/20",
                             updatingId === employer._id ? "opacity-60" : "",
                           ].join(" ")}
                           title={

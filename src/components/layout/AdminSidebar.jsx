@@ -30,29 +30,29 @@ export default function AdminSidebar({ collapsed, setCollapsed, onLogout }) {
     <aside
       className={[
         "h-screen sticky top-0 z-30",
-        "border-r border-slate-200 bg-white",
+        "border-r border-slate-800/60 bg-slate-900/70",
         "transition-all duration-200",
         collapsed ? "w-[96px]" : "w-[280px]",
       ].join(" ")}
     >
       {/* ===== BRAND ===== */}
-      <div className="h-16 flex items-center justify-between px-4 border-b border-slate-200">
+      <div className="h-16 flex items-center justify-between px-4 border-b border-slate-800/60">
         <div className="flex items-center gap-3">
-          <TrafficIcon sx={{ fontSize: 26, color: "#0f172a" }} />
+          <TrafficIcon sx={{ fontSize: 26, color: "#e2e8f0" }} />
 
           {!collapsed && (
             <div className="leading-tight">
-              <div className="text-sm font-semibold text-slate-900">
+              <div className="text-sm font-semibold text-slate-100">
                 KifTari2
               </div>
-              <div className="text-xs text-slate-500">Super Admin</div>
+              <div className="text-xs text-slate-400">Super Admin</div>
             </div>
           )}
         </div>
 
         <button
           onClick={() => setCollapsed((v) => !v)}
-          className="h-9 w-9 rounded-lg hover:bg-slate-100 flex items-center justify-center"
+          className="h-9 w-9 rounded-lg hover:bg-slate-900/40 flex items-center justify-center"
           title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
           {collapsed ? <Menu size={18} /> : <ChevronLeft size={18} />}
@@ -78,8 +78,8 @@ export default function AdminSidebar({ collapsed, setCollapsed, onLogout }) {
                       "group flex items-center gap-4 px-3 py-3 rounded-lg",
                       "text-sm font-medium transition-colors",
                       isActive
-                        ? "bg-primary text-white"
-                        : "text-slate-700 hover:bg-primaryLight hover:text-primary",
+                        ? "bg-emerald-400/20 text-emerald-100"
+                        : "text-slate-300 hover:bg-slate-900/60 hover:text-slate-100",
                     ].join(" ")
                   }
                 >
@@ -102,10 +102,10 @@ export default function AdminSidebar({ collapsed, setCollapsed, onLogout }) {
       </nav>
 
       {/* ===== LOGOUT ===== */}
-      <div className="absolute bottom-0 left-0 right-0 p-2 border-t border-slate-200 bg-white">
+      <div className="absolute bottom-0 left-0 right-0 p-2 border-t border-slate-800/60 bg-slate-900/70">
         <button
           onClick={onLogout}
-          className="w-full flex items-center gap-4 px-3 py-3 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100"
+          className="w-full flex items-center gap-4 px-3 py-3 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-900/40"
         >
           <LogOut size={20} />
           {!collapsed && <span>Logout</span>}

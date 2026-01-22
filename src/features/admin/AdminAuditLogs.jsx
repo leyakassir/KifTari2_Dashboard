@@ -130,7 +130,7 @@ export default function AdminAuditLogs() {
 
   if (loading) {
     return (
-      <div className="bg-white border border-slate-200 rounded-xl p-8 flex justify-center">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-8 flex justify-center">
         <Loader2 className="animate-spin text-slate-400" />
       </div>
     );
@@ -138,23 +138,23 @@ export default function AdminAuditLogs() {
 
   return (
     <div className="space-y-6">
-      <div className="bg-white border border-slate-200 rounded-xl p-4 flex flex-wrap items-center justify-between gap-3">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4 flex flex-wrap items-center justify-between gap-3">
         <div>
-          <div className="font-semibold text-slate-900">Audit Logs</div>
-          <div className="text-xs text-slate-500">
+          <div className="font-semibold text-slate-100">Audit Logs</div>
+          <div className="text-xs text-slate-400">
             Read-only governance activity history
           </div>
         </div>
         <button
           onClick={fetchLogs}
-          className="flex items-center gap-2 text-sm px-3 py-2 border border-slate-200 rounded-lg hover:bg-slate-50"
+          className="flex items-center gap-2 text-sm px-3 py-2 border border-slate-800/60 rounded-lg hover:bg-slate-900/60"
         >
           <RefreshCcw size={14} />
           Refresh
         </button>
       </div>
 
-      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl overflow-hidden">
         {errorMessage ? (
           <div className="px-6 py-4 text-sm text-red-600">
             {errorMessage}
@@ -163,8 +163,8 @@ export default function AdminAuditLogs() {
 
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="bg-slate-50 border-b">
-              <tr className="text-left text-slate-600">
+            <thead className="bg-slate-900/60 border-b">
+              <tr className="text-left text-slate-400">
                 <th className="px-6 py-3">Timestamp</th>
                 <th className="px-6 py-3">Action</th>
                 <th className="px-6 py-3">Actor</th>
@@ -175,29 +175,29 @@ export default function AdminAuditLogs() {
             <tbody className="divide-y">
               {logs.map((log) => (
                 <Fragment key={log._id}>
-                  <tr className="hover:bg-slate-50">
-                    <td className="px-6 py-4 text-slate-600">
+                  <tr className="hover:bg-slate-900/60">
+                    <td className="px-6 py-4 text-slate-400">
                       {formatDateTime(log.createdAt)}
                     </td>
-                    <td className="px-6 py-4 text-slate-900 font-medium">
+                    <td className="px-6 py-4 text-slate-100 font-medium">
                       {log.action}
                     </td>
-                    <td className="px-6 py-4 text-slate-600">
+                    <td className="px-6 py-4 text-slate-400">
                       {log.actorId
                         ? `${log.actorId.firstName || ""} ${log.actorId.lastName || ""}`.trim()
                         : "N/A"}
                     </td>
-                    <td className="px-6 py-4 text-slate-600">
+                    <td className="px-6 py-4 text-slate-400">
                       {log.targetType || "N/A"}
                     </td>
-                    <td className="px-6 py-4 text-slate-500">
+                    <td className="px-6 py-4 text-slate-400">
                       <button
                         onClick={() =>
                           setOpenId((prev) =>
                             prev === log._id ? null : log._id
                           )
                         }
-                        className="inline-flex items-center gap-2 text-xs font-medium px-3 py-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50"
+                        className="inline-flex items-center gap-2 text-xs font-medium px-3 py-2 rounded-lg border border-slate-800/60 text-slate-300 hover:bg-slate-900/60"
                       >
                         <Info size={14} />
                         {openId === log._id ? "Hide Details" : "View Details"}
@@ -205,10 +205,10 @@ export default function AdminAuditLogs() {
                     </td>
                   </tr>
                   {openId === log._id ? (
-                    <tr className="bg-slate-50">
+                    <tr className="bg-slate-900/60">
                       <td
                         colSpan={5}
-                        className="px-6 py-4 text-sm text-slate-600"
+                        className="px-6 py-4 text-sm text-slate-400"
                       >
                         <pre className="whitespace-pre-wrap font-sans">
                           {formatMetadata(log.metadata, log.action)}

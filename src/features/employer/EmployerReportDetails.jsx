@@ -34,7 +34,7 @@ export default function EmployerReportDetails() {
   }, [id]);
 
   if (loading) {
-    return <div className="p-6 text-slate-500">Loading report…</div>;
+    return <div className="p-6 text-slate-400">Loading report…</div>;
   }
 
   if (error) {
@@ -63,7 +63,7 @@ export default function EmployerReportDetails() {
       <div className="flex items-center justify-between">
         <button
           onClick={() => navigate("/employer/reports")}
-          className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900"
+          className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-100"
         >
           <ArrowLeft size={18} />
           Back to Reports
@@ -85,17 +85,17 @@ export default function EmployerReportDetails() {
 
       {/* ===== TITLE ===== */}
       <div>
-        <h1 className="text-2xl font-semibold text-slate-900">
+        <h1 className="text-2xl font-semibold text-slate-100">
           {report.title}
         </h1>
-        <p className="text-sm text-slate-500 mt-1">
+        <p className="text-sm text-slate-400 mt-1">
           Created on {new Date(report.createdAt).toLocaleDateString()}
         </p>
       </div>
 
       {/* ===== DESCRIPTION ===== */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6">
-        <p className="text-slate-700 leading-relaxed">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-6">
+        <p className="text-slate-300 leading-relaxed">
           {report.description}
         </p>
       </div>
@@ -120,8 +120,8 @@ export default function EmployerReportDetails() {
       </div>
 
       {/* ===== AI CLASSIFICATION ===== */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6">
-        <h3 className="text-base font-semibold text-slate-900 mb-4">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-6">
+        <h3 className="text-base font-semibold text-slate-100 mb-4">
           AI Classification
         </h3>
 
@@ -135,10 +135,10 @@ export default function EmployerReportDetails() {
 
       {/* ===== MAP ===== */}
       {mapUrl && (
-        <div className="bg-white border border-slate-200 rounded-xl p-6">
+        <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-6">
           <div className="flex items-center gap-2 mb-3">
-            <MapPin size={18} className="text-slate-600" />
-            <h3 className="text-base font-semibold text-slate-900">
+            <MapPin size={18} className="text-slate-400" />
+            <h3 className="text-base font-semibold text-slate-100">
               Location
             </h3>
           </div>
@@ -173,12 +173,12 @@ export default function EmployerReportDetails() {
 
 function InfoItem({ icon, label, value }) {
   return (
-    <div className="bg-white border border-slate-200 rounded-xl p-4">
-      <div className="flex items-center gap-2 text-slate-500 text-sm">
+    <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4">
+      <div className="flex items-center gap-2 text-slate-400 text-sm">
         {icon}
         <span>{label}</span>
       </div>
-      <p className="mt-2 font-medium text-slate-900">{value}</p>
+      <p className="mt-2 font-medium text-slate-100">{value}</p>
     </div>
   );
 }
@@ -186,16 +186,16 @@ function InfoItem({ icon, label, value }) {
 function AiItem({ label, value }) {
   return (
     <div>
-      <p className="text-xs text-slate-500">{label}</p>
-      <p className="font-medium text-slate-900">{value}</p>
+      <p className="text-xs text-slate-400">{label}</p>
+      <p className="font-medium text-slate-100">{value}</p>
     </div>
   );
 }
 
 function ImageCard({ title, src }) {
   return (
-    <div className="bg-white border border-slate-200 rounded-xl p-4">
-      <p className="text-sm font-medium text-slate-600 mb-2">
+    <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4">
+      <p className="text-sm font-medium text-slate-400 mb-2">
         {title}
       </p>
       <img

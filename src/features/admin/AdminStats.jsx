@@ -87,7 +87,7 @@ export default function AdminStats() {
 
   if (loading) {
     return (
-      <div className="bg-white border border-slate-200 rounded-xl p-8 flex justify-center">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-8 flex justify-center">
         <Loader2 className="animate-spin text-slate-400" />
       </div>
     );
@@ -96,27 +96,27 @@ export default function AdminStats() {
   return (
     <div className="space-y-6">
       {errorMessage ? (
-        <div className="bg-white border border-slate-200 rounded-xl p-4 text-sm text-red-600">
+        <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4 text-sm text-red-600">
           {errorMessage}
         </div>
       ) : null}
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-white border border-slate-200 rounded-xl p-4">
-          <div className="text-xs text-slate-500">Total Reports</div>
-          <div className="text-2xl font-semibold text-slate-900">
+        <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4">
+          <div className="text-xs text-slate-400">Total Reports</div>
+          <div className="text-2xl font-semibold text-slate-100">
             {summary?.totalReports ?? 0}
           </div>
         </div>
-        <div className="bg-white border border-slate-200 rounded-xl p-4">
-          <div className="text-xs text-slate-500">Unresolved Reports</div>
-          <div className="text-2xl font-semibold text-slate-900">
+        <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4">
+          <div className="text-xs text-slate-400">Unresolved Reports</div>
+          <div className="text-2xl font-semibold text-slate-100">
             {summary?.unresolvedReports ?? 0}
           </div>
         </div>
-        <div className="bg-white border border-slate-200 rounded-xl p-4">
-          <div className="text-xs text-slate-500">Total Users</div>
-          <div className="text-2xl font-semibold text-slate-900">
+        <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-4">
+          <div className="text-xs text-slate-400">Total Users</div>
+          <div className="text-2xl font-semibold text-slate-100">
             {summary?.totalUsers
               ? Object.values(summary.totalUsers).reduce(
                   (sum, value) => sum + value,
@@ -127,8 +127,8 @@ export default function AdminStats() {
         </div>
       </div>
 
-      <div className="bg-white border border-slate-200 rounded-xl p-6">
-        <div className="text-sm font-semibold text-slate-700 mb-4">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-6">
+        <div className="text-sm font-semibold text-slate-300 mb-4">
           Reports Distribution by Status
         </div>
 
@@ -144,20 +144,20 @@ export default function AdminStats() {
         </div>
       </div>
 
-      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl overflow-hidden">
         <div className="px-6 py-4 border-b">
-          <div className="font-semibold text-slate-900">Recent Reports</div>
-          <div className="text-xs text-slate-500">
+          <div className="font-semibold text-slate-100">Recent Reports</div>
+          <div className="text-xs text-slate-400">
             Read-only visibility for governance
           </div>
         </div>
         <div className="divide-y">
           {recentReports.map((report) => (
             <div key={report._id} className="px-6 py-4 text-sm">
-              <div className="font-medium text-slate-900">
+              <div className="font-medium text-slate-100">
                 {report.title || "Untitled report"}
               </div>
-              <div className="text-xs text-slate-500 flex flex-wrap gap-3">
+              <div className="text-xs text-slate-400 flex flex-wrap gap-3">
                 <span>Status: {report.status || "N/A"}</span>
                 <span>
                   Municipality:{" "}
@@ -168,7 +168,7 @@ export default function AdminStats() {
             </div>
           ))}
           {recentReports.length === 0 ? (
-            <div className="px-6 py-4 text-sm text-slate-500">
+            <div className="px-6 py-4 text-sm text-slate-400">
               No reports available.
             </div>
           ) : null}

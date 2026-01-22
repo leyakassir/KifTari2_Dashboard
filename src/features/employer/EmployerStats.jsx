@@ -20,14 +20,14 @@ import {
 /* ================= STAT CARD ================= */
 function StatCard({ title, value, icon: Icon }) {
   return (
-    <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-center gap-4">
-      <div className="h-12 w-12 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700">
+    <div className="bg-slate-900/50 rounded-xl border border-slate-800/60 p-5 shadow-sm flex items-center gap-4">
+      <div className="h-12 w-12 rounded-lg bg-slate-900/60 flex items-center justify-center text-slate-300">
         <Icon size={22} />
       </div>
 
       <div>
-        <div className="text-sm text-slate-500">{title}</div>
-        <div className="text-2xl font-semibold text-slate-900">
+        <div className="text-sm text-slate-400">{title}</div>
+        <div className="text-2xl font-semibold text-slate-100">
           {value}
         </div>
       </div>
@@ -65,7 +65,7 @@ export default function EmployerStats() {
         {[1, 2, 3, 4].map((i) => (
           <div
             key={i}
-            className="h-24 bg-slate-100 rounded-xl animate-pulse"
+            className="h-24 bg-slate-900/60 rounded-xl animate-pulse"
           />
         ))}
       </div>
@@ -75,7 +75,7 @@ export default function EmployerStats() {
   /* ================= ERROR ================= */
   if (error) {
     return (
-      <div className="text-red-500 bg-white border border-red-200 rounded-xl p-6">
+      <div className="text-red-500 bg-slate-900/50 border border-red-200 rounded-xl p-6">
         {error}
       </div>
     );
@@ -96,11 +96,11 @@ export default function EmployerStats() {
     <div className="space-y-8">
       {/* ===== HEADER WITH MUNICIPALITY NAME ===== */}
       <div>
-        <h1 className="text-xl font-semibold text-slate-900">
+        <h1 className="text-xl font-semibold text-slate-100">
           Statistics
         </h1>
 
-        <div className="mt-1 flex items-center gap-2 text-sm text-slate-500">
+        <div className="mt-1 flex items-center gap-2 text-sm text-slate-400">
           <MapPin size={16} />
           <span>
             {municipalityName
@@ -119,8 +119,8 @@ export default function EmployerStats() {
       </div>
 
       {/* ===== CHART ===== */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6">
-        <h3 className="text-sm font-semibold text-slate-700 mb-4">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-xl p-6">
+        <h3 className="text-sm font-semibold text-slate-300 mb-4">
           Reports Distribution by Status
         </h3>
 

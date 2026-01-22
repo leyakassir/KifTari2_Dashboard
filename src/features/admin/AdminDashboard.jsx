@@ -8,12 +8,12 @@ import {
 
 function ActionCard({ icon: Icon, title, desc }) {
   return (
-    <div className="bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-sm transition">
+    <div className="bg-slate-900/50 border border-slate-800/60 rounded-2xl p-5 hover:shadow-sm transition">
       <div className="flex items-center gap-3 mb-2">
-        <Icon size={18} className="text-primary" />
-        <div className="font-medium text-slate-900">{title}</div>
+        <Icon size={18} className="text-emerald-300" />
+        <div className="font-medium text-slate-100">{title}</div>
       </div>
-      <p className="text-sm text-slate-600">{desc}</p>
+      <p className="text-sm text-slate-400">{desc}</p>
     </div>
   );
 }
@@ -21,28 +21,28 @@ function ActionCard({ icon: Icon, title, desc }) {
 export default function AdminDashboard() {
   return (
     <div className="space-y-10">
-      <div className="bg-white border border-slate-200 rounded-2xl p-6">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-2xl p-6">
         <div className="flex items-center gap-3 mb-2">
-          <ShieldCheck className="text-primary" size={20} />
-          <h2 className="text-lg font-semibold text-slate-900">
+          <ShieldCheck className="text-emerald-300" size={20} />
+          <h2 className="text-lg font-semibold text-slate-100">
             Super Admin Governance
           </h2>
         </div>
 
-        <p className="text-sm text-slate-600 leading-relaxed max-w-3xl">
+        <p className="text-sm text-slate-400 leading-relaxed max-w-3xl">
           This console provides system-wide oversight for KifTari2. Monitor
           municipalities, manage users safely, and keep governance controls
           consistent across the platform.
         </p>
       </div>
 
-      <div className="bg-white border border-slate-200 rounded-2xl p-6">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-2xl p-6">
         <div className="flex items-center gap-2 mb-4">
-          <AlertTriangle size={18} className="text-primary" />
-          <h3 className="font-semibold text-slate-900">Governance Rules</h3>
+          <AlertTriangle size={18} className="text-emerald-300" />
+          <h3 className="font-semibold text-slate-100">Governance Rules</h3>
         </div>
 
-        <ul className="text-sm text-slate-600 space-y-2 list-disc pl-5">
+        <ul className="text-sm text-slate-400 space-y-2 list-disc pl-5">
           <li>Users can be deactivated, not deleted.</li>
           <li>Municipalities stay auditable even when inactive.</li>
           <li>Admin insights are read-only for safe oversight.</li>
@@ -51,7 +51,7 @@ export default function AdminDashboard() {
       </div>
 
       <div>
-        <h3 className="font-semibold text-slate-900 mb-4">Quick Access</h3>
+        <h3 className="font-semibold text-slate-100 mb-4">Quick Access</h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <ActionCard

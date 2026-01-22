@@ -15,12 +15,12 @@ import {
 function Step({ icon: Icon, title, desc }) {
   return (
     <div className="flex items-start gap-4">
-      <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+      <div className="h-10 w-10 rounded-xl bg-emerald-400/10 text-emerald-300 flex items-center justify-center">
         <Icon size={20} />
       </div>
       <div>
-        <div className="font-medium text-slate-900">{title}</div>
-        <div className="text-sm text-slate-600">{desc}</div>
+        <div className="font-medium text-slate-100">{title}</div>
+        <div className="text-sm text-slate-400">{desc}</div>
       </div>
     </div>
   );
@@ -29,12 +29,12 @@ function Step({ icon: Icon, title, desc }) {
 /* ================= ACTION CARD ================= */
 function ActionCard({ icon: Icon, title, desc }) {
   return (
-    <div className="bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-sm transition">
+    <div className="bg-slate-900/50 border border-slate-800/60 rounded-2xl p-5 hover:shadow-sm transition">
       <div className="flex items-center gap-3 mb-2">
-        <Icon size={18} className="text-primary" />
-        <div className="font-medium text-slate-900">{title}</div>
+        <Icon size={18} className="text-emerald-300" />
+        <div className="font-medium text-slate-100">{title}</div>
       </div>
-      <p className="text-sm text-slate-600">{desc}</p>
+      <p className="text-sm text-slate-400">{desc}</p>
     </div>
   );
 }
@@ -43,15 +43,15 @@ export default function EmployerDashboard() {
   return (
     <div className="space-y-10">
       {/* ================= MUNICIPALITY INFO ================= */}
-      <div className="bg-white border border-slate-200 rounded-2xl p-6">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-2xl p-6">
         <div className="flex items-center gap-3 mb-2">
-          <MapPin className="text-primary" size={20} />
-          <h2 className="text-lg font-semibold text-slate-900">
+          <MapPin className="text-emerald-300" size={20} />
+          <h2 className="text-lg font-semibold text-slate-100">
             Municipality Dashboard
           </h2>
         </div>
 
-        <p className="text-sm text-slate-600 leading-relaxed max-w-3xl">
+        <p className="text-sm text-slate-400 leading-relaxed max-w-3xl">
           This dashboard allows municipality employers to manage citizen reports,
           coordinate field operators, and ensure road and traffic issues are
           handled efficiently within their assigned area.
@@ -59,15 +59,15 @@ export default function EmployerDashboard() {
       </div>
 
       {/* ================= WHAT THIS SYSTEM DOES ================= */}
-      <div className="bg-white border border-slate-200 rounded-2xl p-6">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-2xl p-6">
         <div className="flex items-center gap-2 mb-4">
-          <Info size={18} className="text-primary" />
-          <h3 className="font-semibold text-slate-900">
+          <Info size={18} className="text-emerald-300" />
+          <h3 className="font-semibold text-slate-100">
             What This System Does
           </h3>
         </div>
 
-        <p className="text-sm text-slate-600 leading-relaxed max-w-4xl">
+        <p className="text-sm text-slate-400 leading-relaxed max-w-4xl">
           KifTari2 is a municipality reporting platform that connects citizens,
           employers, and field operators to streamline the reporting and
           resolution of road and traffic-related issues. The system ensures
@@ -77,10 +77,10 @@ export default function EmployerDashboard() {
       </div>
 
       {/* ================= REPORT LIFECYCLE ================= */}
-      <div className="bg-white border border-slate-200 rounded-2xl p-6">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-2xl p-6">
         <div className="flex items-center gap-2 mb-6">
-          <ClipboardCheck size={18} className="text-primary" />
-          <h3 className="font-semibold text-slate-900">
+          <ClipboardCheck size={18} className="text-emerald-300" />
+          <h3 className="font-semibold text-slate-100">
             Report Lifecycle
           </h3>
         </div>
@@ -111,7 +111,7 @@ export default function EmployerDashboard() {
 
       {/* ================= QUICK ACCESS ================= */}
       <div>
-        <h3 className="font-semibold text-slate-900 mb-4">
+        <h3 className="font-semibold text-slate-100 mb-4">
           Quick Access
         </h3>
 
@@ -135,15 +135,15 @@ export default function EmployerDashboard() {
       </div>
 
       {/* ================= GUIDELINES & TIPS ================= */}
-      <div className="bg-white border border-slate-200 rounded-2xl p-6">
+      <div className="bg-slate-900/50 border border-slate-800/60 rounded-2xl p-6">
         <div className="flex items-center gap-2 mb-4">
-          <HelpCircle size={18} className="text-primary" />
-          <h3 className="font-semibold text-slate-900">
+          <HelpCircle size={18} className="text-emerald-300" />
+          <h3 className="font-semibold text-slate-100">
             Employer Guidelines
           </h3>
         </div>
 
-        <ul className="text-sm text-slate-600 space-y-2 list-disc pl-5">
+        <ul className="text-sm text-slate-400 space-y-2 list-disc pl-5">
           <li>Review reports carefully before assigning them.</li>
           <li>Ensure operators upload proof images after resolution.</li>
           <li>Monitor report progress to avoid delays.</li>

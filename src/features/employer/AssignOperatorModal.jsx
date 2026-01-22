@@ -62,11 +62,11 @@ export default function AssignOperatorModal({
   };
 
   return (
-    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-      <div className="bg-white rounded-xl w-full max-w-md p-6 space-y-5">
+    <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+      <div className="bg-slate-900/70 rounded-2xl border border-slate-800/60 w-full max-w-md p-6 space-y-5 backdrop-blur">
         {/* HEADER */}
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold">
+          <h3 className="text-lg font-semibold text-slate-100">
             Assign Field Operator
           </h3>
           <button onClick={onClose}>
@@ -76,13 +76,13 @@ export default function AssignOperatorModal({
 
         {/* SELECT */}
         <div>
-          <label className="block text-sm text-slate-600 mb-1">
+          <label className="block text-sm text-slate-400 mb-1">
             Field Operator
           </label>
           <select
             value={selectedOperatorId}
             onChange={(e) => setSelectedOperatorId(e.target.value)}
-            className="w-full border rounded-lg px-3 py-2"
+            className="w-full px-3 py-2"
           >
             <option value="">Select operator</option>
             {operators.map((op) => (
@@ -94,14 +94,14 @@ export default function AssignOperatorModal({
         </div>
 
         {error && (
-          <p className="text-sm text-red-600">{error}</p>
+          <p className="text-sm text-red-200">{error}</p>
         )}
 
         {/* ACTIONS */}
         <div className="flex justify-end gap-3">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-lg border"
+            className="px-4 py-2 rounded-2xl border border-slate-700/70 text-slate-200 hover:bg-slate-900/40"
             disabled={loading}
           >
             Cancel
@@ -110,7 +110,7 @@ export default function AssignOperatorModal({
           <button
             onClick={handleAssign}
             disabled={!selectedOperatorId || loading}
-            className="px-4 py-2 rounded-lg bg-primary text-white disabled:opacity-50"
+            className="px-4 py-2 rounded-2xl bg-emerald-400 text-slate-950 disabled:opacity-50"
           >
             {loading ? "Assigning..." : "Assign"}
           </button>
