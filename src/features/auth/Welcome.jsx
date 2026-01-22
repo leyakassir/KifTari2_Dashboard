@@ -77,6 +77,13 @@ export default function Welcome() {
             </div>
           </div>
         </div>
+
+        <div className="mt-10 flex flex-wrap items-center gap-6 text-xs uppercase tracking-[0.3em] text-slate-500">
+          <span>Reports</span>
+          <span>Operators</span>
+          <span>Municipalities</span>
+          <span>Street Conditions</span>
+        </div>
       </div>
     </div>
   );
