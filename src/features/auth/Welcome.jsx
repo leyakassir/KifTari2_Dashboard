@@ -8,6 +8,17 @@ export default function Welcome() {
       className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100"
       style={{ fontFamily: "'Source Sans 3', sans-serif" }}
     >
+      {/* Primary logo placement */}
+      <div className="absolute left-6 top-6 z-10 flex items-center gap-3 rounded-2xl border border-slate-800/70 bg-slate-900/70 px-4 py-3 shadow-lg backdrop-blur">
+        <img
+          src="/logo.png"
+          alt="KifTari2 logo"
+          className="h-12 w-12 rounded-xl bg-white p-2"
+        />
+        <span className="text-sm font-semibold text-slate-100">
+          KifTari2 Governance
+        </span>
+      </div>
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 left-10 h-72 w-72 rounded-full bg-emerald-500/20 blur-3xl" />
         <div className="absolute top-20 right-0 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl" />
