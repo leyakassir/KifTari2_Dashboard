@@ -13,7 +13,7 @@ export default function Welcome() {
         <div className="absolute bottom-[-20%] right-10 h-80 w-80 rounded-full bg-sky-500/10 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col px-6 pt-28 pb-8 lg:pt-32">
+      <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-10">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
           <div className="space-y-8">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-start">

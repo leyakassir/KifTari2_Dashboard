@@ -79,7 +79,7 @@ export default function Login() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950 px-4 py-12 text-slate-100">
+    <div className="relative flex min-h-screen items-center overflow-hidden bg-slate-950 px-4 py-10 text-slate-100">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 left-10 h-72 w-72 rounded-full bg-emerald-500/20 blur-3xl" />
         <div className="absolute top-20 right-0 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl" />
