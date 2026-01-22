@@ -91,37 +91,41 @@ export default function Login() {
       </div>
 
       <div
-        className="relative mx-auto flex min-h-screen max-w-lg flex-col justify-center"
+        className="relative mx-auto flex min-h-screen max-w-3xl flex-col justify-center"
         style={{ fontFamily: "'Source Sans 3', sans-serif" }}
       >
-        <div className="flex flex-col items-center gap-5 text-center">
-          <img
-            src="/logo.png"
-            alt="KifTari2 logo"
-            className="h-24 w-24 rounded-[24px] bg-white p-3 shadow-2xl sm:h-28 sm:w-28"
-          />
-          <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.32em] text-emerald-100/80">
-              KIFTARI2 GOVERNANCE
-            </p>
-            <h1 className="text-2xl font-semibold text-slate-50 sm:text-3xl">
-              Municipal dashboard login
-            </h1>
-            <p className="text-sm text-slate-300">
-              Sign in to review reports, manage operators, and track municipal
-              street conditions.
-            </p>
+        {/* Upper zone: identity */}
+        <div className="space-y-6 pb-10 text-center sm:text-left">
+          <div className="flex flex-col items-center gap-5 sm:flex-row sm:items-start">
+            <img
+              src="/logo.png"
+              alt="KifTari2 logo"
+              className="h-28 w-28 rounded-[28px] bg-white p-4 shadow-2xl sm:h-32 sm:w-32"
+            />
+            <div className="space-y-3">
+              <p className="text-xs uppercase tracking-[0.32em] text-emerald-100/80">
+                KIFTARI2 GOVERNANCE
+              </p>
+              <h1 className="text-2xl font-semibold text-slate-50 sm:text-3xl">
+                Secure municipal login
+              </h1>
+              <p className="text-sm text-slate-300 sm:text-base">
+                Official access for municipal staff to review reports and manage
+                field operations.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="mt-10 w-full rounded-3xl border border-slate-800/70 bg-slate-900/70 p-8 shadow-[0_30px_80px_rgba(15,23,42,0.45)] backdrop-blur">
+        {/* Lower zone: form */}
+        <div className="w-full rounded-3xl border border-slate-800/60 bg-slate-900/50 p-8 backdrop-blur sm:p-10">
           {error ? (
-            <div className="mb-5 rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+            <div className="mb-6 rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
               {error}
             </div>
           ) : null}
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label className="mb-2 block text-xs font-semibold text-slate-300">
                 Email
@@ -132,7 +136,7 @@ export default function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full rounded-2xl border border-slate-700/80 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
+                className="w-full rounded-2xl border border-slate-700/70 bg-slate-950/40 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
               />
             </div>
 
@@ -146,7 +150,7 @@ export default function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full rounded-2xl border border-slate-700/80 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
+                className="w-full rounded-2xl border border-slate-700/70 bg-slate-950/40 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
               />
             </div>
 
@@ -159,7 +163,7 @@ export default function Login() {
             </button>
           </form>
 
-          <div className="mt-4">
+          <div className="mt-5">
             <button
               onClick={() => {
                 setForgotOpen((prev) => !prev);
@@ -172,7 +176,7 @@ export default function Login() {
           </div>
 
           {forgotOpen ? (
-            <div className="mt-5 rounded-2xl border border-slate-800/70 bg-slate-950/60 p-4">
+            <div className="mt-6 rounded-2xl border border-slate-800/60 bg-slate-950/50 p-4">
               <div className="mb-2 text-xs font-semibold text-slate-200">
                 Reset Password
               </div>
@@ -185,7 +189,7 @@ export default function Login() {
                   placeholder="Email address"
                   value={forgotEmail}
                   onChange={(e) => setForgotEmail(e.target.value)}
-                  className="w-full rounded-2xl border border-slate-700/80 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
+                  className="w-full rounded-2xl border border-slate-700/70 bg-slate-950/40 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
                 />
                 <button
                   type="submit"
