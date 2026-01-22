@@ -19,13 +19,13 @@ export default function Welcome() {
       </div>
 
       <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-16">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="space-y-8">
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col items-start gap-5">
               <img
                 src="/logo.png"
                 alt="KifTari2 logo"
-                className="h-24 w-24 rounded-3xl bg-white p-3 shadow-xl"
+                className="h-32 w-32 rounded-[28px] bg-white p-4 shadow-2xl sm:h-36 sm:w-36"
               />
               <div className="inline-flex items-center gap-3 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-5 py-2 text-xs uppercase tracking-[0.32em] text-emerald-100/80">
                 KIFTARI2 GOVERNANCE
@@ -46,7 +46,7 @@ export default function Welcome() {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
                 to="/login"
-                className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:bg-emerald-300"
+                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:bg-emerald-300"
               >
                 Continue to login
               </Link>
