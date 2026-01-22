@@ -91,7 +91,7 @@ export default function Login() {
       </div>
 
       <div
-        className="relative mx-auto flex min-h-screen max-w-3xl flex-col justify-center"
+        className="relative mx-auto flex min-h-screen max-w-2xl flex-col justify-center"
         style={{ fontFamily: "'Source Sans 3', sans-serif" }}
       >
         {/* Upper zone: identity */}
@@ -118,14 +118,14 @@ export default function Login() {
         </div>
 
         {/* Lower zone: form */}
-        <div className="w-full rounded-3xl border border-slate-800/60 bg-slate-900/50 p-8 backdrop-blur sm:p-10">
+        <div className="w-full max-w-xl rounded-3xl border border-slate-800/60 bg-slate-900/50 p-8 backdrop-blur sm:p-10">
           {error ? (
             <div className="mb-6 rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
               {error}
             </div>
           ) : null}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="mb-2 block text-xs font-semibold text-slate-300">
                 Email
@@ -136,7 +136,7 @@ export default function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full rounded-2xl border border-slate-700/70 bg-slate-950/40 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
+                className="w-full rounded-2xl border border-slate-700/70 bg-slate-950/40 px-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
               />
             </div>
 
@@ -150,7 +150,7 @@ export default function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full rounded-2xl border border-slate-700/70 bg-slate-950/40 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
+                className="w-full rounded-2xl border border-slate-700/70 bg-slate-950/40 px-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
               />
             </div>
 
